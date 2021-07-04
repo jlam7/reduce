@@ -7,15 +7,10 @@ Examples:
 */
 
 function extractValue(arr, key) {
-	let newArr = [];
-	arr.reduce(function(accum, nextVal) {
-		if (newArr.length === 0) {
-			newArr.push(accum[key]);
-		}
-		newArr.push(nextVal[key]);
-		return nextVal;
-	});
-	return newArr;
+	return arr.reduce(function(accum, nextVal) {
+		accum.push(nextVal[key]);
+		return accum;
+	}, []);
 }
 
 /*
